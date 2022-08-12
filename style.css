@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 10fr;
+    height: 100vh;
+}
+
+.header {
+    grid-row: 1 / 2;
+    grid-column: 1 / 6;
+
+    background-color: #ff8787;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19%, 1fr));
+    grid-auto-rows: 19%;
+    gap: 12px;
+    
+    grid-column: 1 / 5;
+    overflow-y: scroll;
+
+}
+
+.right-side {
+    grid-column: 5 / 6;
+    background-color: #ff8787;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+label {
+    width: 118.2px;
+    display: inline-block;
+}
+
+.book {
+    width: fit-content;
+}
+
+button {
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.fill + .fill {
+    margin-top: 12px;
+}
+
+.read:hover {
+    cursor: pointer;
+}

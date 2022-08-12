@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1 style="margin: auto; width: fit-content;">library site v0.1</h1>
+        </div>
+        <div class="content">
+        </div>
+        <div class="right-side">
+            <form action="post">
+                <div class="fill">
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="fill">
+                    <label for="author">Author: </label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                
+                <div class="fill">
+                    <label for="pages">Total pages: </label>
+                    <input type="text" id="pages" names="pages" required>
+                </div>
+
+                <div class="fill">
+                    <label for="has-read">Finished reading? </label>
+                    <input type="checkbox" id="has-read" name="has-read">
+                </div>
+
+                <button type="submit">Add Book to Library</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
