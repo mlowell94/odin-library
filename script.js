@@ -22,6 +22,16 @@ class Book {
         this.pages = pages;
         this.hasRead = hasRead;
     }
+
+    get getReadStatus() {
+        return this.hasRead;
+    }
+
+    set setReadStatus(condition) {
+        this.hasRead = condition;
+    }
+
+
 }
 
 function addToLibrary(book) {                       // Function for adding a book to the array
@@ -50,11 +60,23 @@ function buildLibrary() {                           // Build the library on the 
         pages.classList.add("pages");
     
         let read = document.createElement("div");
-        read.textContent = book.getRead();
+        if(book.getReadStatus == true) {
+            read.textContent = "Completed!"
+        } else {
+            read.textContent = "Incomplete"
+        }
         read.classList.add("read");
         read.addEventListener('click', function(e) {
-            book.changeRead();
-            read.textContent = book.getRead();
+            let temp = true;
+            if(book.getReadStatus == true) {
+                temp = false;
+            }
+            book.setReadStatus = temp;
+            if(book.getReadStatus == true) {
+                read.textContent = "Completed!"
+            } else {
+                read.textContent = "Incomplete"
+            }
         })
 
 
@@ -74,20 +96,4 @@ function buildLibrary() {                           // Build the library on the 
         content.appendChild(item);
         }
     );
-}
-
-Book.prototype.getRead = function() {
-    if(this.hasRead == true) {
-        return "Completed!";
-    } else {
-        return "Incomplete."
-    }
-}
-
-Book.prototype.changeRead = function() {
-    if(this.hasRead == true) {
-        this.hasRead = false;
-    } else {
-        this.hasRead = true;
-    }
 }
