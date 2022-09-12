@@ -15,11 +15,13 @@ form.addEventListener('submit', function(e) {       // Add an event listener for
 
 let myLibrary = [];                                 // Create the library array
 
-function Book(title, author, pages, hasRead) {      // Book constructor
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
+class Book {
+    constructor(title, author, pages, hasRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
+    }
 }
 
 function addToLibrary(book) {                       // Function for adding a book to the array
