@@ -12,7 +12,7 @@
     <div class="wrapper">
         <div class="header">
             <h1 style="margin: auto; width: fit-content;">library site v0.1</h1>
-            <p>this is all temporary! i will style it later :)</p>
+            <p>this is all temporary! i will style it later :) </p>
         </div>
         <div class="main">
             <div class="content">
@@ -22,17 +22,17 @@
             <form action="post">
                 <div class="fill">
                     <label for="title">Title: </label>
-                    <input type="text" id="title" name="title" required>
+                    <input type="text" id="title" name="title" required minlength="1">
                 </div>
 
                 <div class="fill">
                     <label for="author">Author: </label>
-                    <input type="text" id="author" name="author" required>
+                    <input type="text" id="author" name="author" required pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$">
                 </div>
                 
                 <div class="fill">
                     <label for="pages">Total pages: </label>
-                    <input type="text" id="pages" names="pages" required>
+                    <input type="text" id="pages" names="pages" required pattern=^(0|[1-9][0-9]*)$>
                 </div>
 
                 <div class="fill">

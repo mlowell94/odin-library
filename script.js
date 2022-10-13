@@ -97,3 +97,42 @@ function buildLibrary() {                           // Build the library on the 
         }
     );
 }
+
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const pages = document.querySelector('#pages');
+
+title.addEventListener('input', () => {
+    title.setCustomValidity("");
+    title.checkValidity();
+})
+
+author.addEventListener('input', () => {
+    author.setCustomValidity('');
+    author.checkValidity();
+})
+
+pages.addEventListener('input', () => {
+    pages.setCustomValidity('');
+    pages.checkValidity();
+})
+
+title.addEventListener('invalid', () => {
+    title.setCustomValidity("Enter a title.");
+})
+
+author.addEventListener('invalid', () => {
+    if(author.value === "") {
+        author.setCustomValidity("")
+    } else {
+        author.setCustomValidity("Author name must consist of only letters.")
+    }
+})
+
+pages.addEventListener('invalid', () => {
+    if(pages.value === "") {
+        pages.setCustomValidity("")
+    } else {
+        pages.setCustomValidity("Page must consist of only numbers.")
+    }
+})
